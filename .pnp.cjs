@@ -50,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:395a4f0ca5cddfa0e5515a538095600b469529b641b5666642503169133d59aa013c27f5a820f625c09a22d7f4b921219533a78f2995422bcde096862706f768#npm:29.0.3"],
             ["jsonwebtoken", "npm:8.5.1"],
             ["octokit", "npm:2.0.5"],
+            ["prettier", "npm:2.7.1"],
             ["prompt", "npm:1.3.0"],
             ["request", "npm:2.88.2"]
           ],
@@ -7011,6 +7012,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:395a4f0ca5cddfa0e5515a538095600b469529b641b5666642503169133d59aa013c27f5a820f625c09a22d7f4b921219533a78f2995422bcde096862706f768#npm:29.0.3"],
             ["jsonwebtoken", "npm:8.5.1"],
             ["octokit", "npm:2.0.5"],
+            ["prettier", "npm:2.7.1"],
             ["prompt", "npm:1.3.0"],
             ["request", "npm:2.88.2"]
           ],
@@ -7373,6 +7375,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["pkg-dir", "npm:4.2.0"],
             ["find-up", "npm:4.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["prettier", [
+        ["npm:2.7.1", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.7.1-d1f40f5e1a-55a4409182.zip/node_modules/prettier/",
+          "packageDependencies": [
+            ["prettier", "npm:2.7.1"]
           ],
           "linkType": "HARD",
         }]
