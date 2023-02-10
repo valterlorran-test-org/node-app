@@ -1,8 +1,8 @@
 const { createGitHubAppComment } = require("./bot");
-const { createGitHubCodespaces } = require("./lib");
+const { createGitHubCodespaces, createAppLink, createLinkComment } = require("./lib");
 
-async function onPullRequestOpened(octokit, payload) {
-    const issueNumber = payload.issue.number;
+async function onPullRequestOpened({ octokit, payload }) {
+    const issueNumber = payload.number;
     const codespace = await createGitHubCodespaces(octokit, issueNumber, process.env.REPOSITORY_ID);
     const appLink = createAppLink(codespace);
     const body = createLinkComment(appLink);

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { Octokit } = require('@octokit/core')
 
 /**
  * Get app port
@@ -43,11 +44,40 @@ function loadPrivateKey() {
  * Create GitHub codespaces
  */
 async function createGitHubCodespaces(octokit, pull_number, repository_id) {
-    return await octokit.request(`POST /user/codespaces`, {
+
+    const token = process.env.MY_TOKEN_DEVICE
+
+    const octokit2 = new Octokit({
+        auth: token,
+    });
+
+    return await octokit2.request(`POST /user/codespaces`, {
         location: 'WestUs2',
-        pull_number: pull_number,
-        repository_id: repository_id,
+        // pull_number: pull_number,
+        repository_id: process.env.REPOSITORY_ID,
+        pull_request: {
+            pull_request_number: pull_number,
+            repository_id: parseInt( repository_id ),
+        },
     })
+
+    // console.log( {
+    //     pull_number,
+    //     repository_id
+    // } )
+    // return await octokit.request(`POST /user/codespaces`, {
+    //     location: 'WestUs2',
+    //     pull_number: pull_number,
+    //     repository_id: parseInt( repository_id ),
+    // } )
+
+    // return await octokit.rest.codespaces.createForAuthenticatedUser( {
+    //     repository_id: parseInt( repository_id ),
+    //     pull_request: {
+    //         pull_request_number: pull_number,
+    //         repository_id: parseInt( repository_id ),
+    //     },
+    // } )
 }
 
 

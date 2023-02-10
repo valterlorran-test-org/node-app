@@ -37,23 +37,24 @@ async function createToken() {
     console.log(token)
 }
 
-// async function run() {
-//     const token = process.env.MY_TOKEN_DEVICE
+async function run() {
+    // createToken();
+    // const token = process.env.MY_TOKEN_DEVICE
 
-//     const octokit2 = new Octokit({
-//         auth: token,
-//     });
+    // const octokit2 = new Octokit({
+    //     auth: token,
+    // });
 
-//     console.log(octokit2)
+    // console.log(octokit2)
 
-//     // const res2 = await octokit2.request(`POST /user/codespaces`, {
-//     //     location: 'WestUs2',
-//     //     pull_number: 3,
-//     //     repository_id: process.env.REPOSITORY_ID,
-//     // })
-//     // console.log(res2)
-// }
-// setTimeout(run, 1)
+    // const res2 = await octokit2.request(`POST /user/codespaces`, {
+    //     location: 'WestUs2',
+    //     pull_number: 3,
+    //     repository_id: process.env.REPOSITORY_ID,
+    // })
+    // console.log(res2)
+}
+setTimeout(run, 1)
 
 app2.oauth.on('token', onToken);
 
